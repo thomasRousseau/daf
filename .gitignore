@@ -1,0 +1,9 @@
+*__pycache__*
+*.pyc
+*.swp
+TODO
+plugin_todo/
+rm_sessions_folder.sh
+sessions/
+documentation/
+

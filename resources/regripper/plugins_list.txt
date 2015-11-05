@@ -1,0 +1,980 @@
+1. acmru v.20080324 [NTUSER.DAT]
+   - Gets contents of user's ACMru key
+
+2. adoberdr v.20150717 [NTUSER.DAT]
+   - Gets user's Adobe Reader cRecentFiles values
+
+3. ahaha v.20131009 [Software,NTUSER.DAT]
+   - Detect possible presence of ahaha malware
+
+4. aim v.20080325 [NTUSER.DAT]
+   - Gets info from the AOL Instant Messenger (not AIM) install
+
+5. amcache v.20131218 [amcache]
+   - Parse AmCache.hve file
+
+6. aports v.20110204 [NTUSER.DAT]
+   - Extracts the install path for SmartLine Inc. Active Ports.
+
+7. appcertdlls v.20120817 [System]
+   - Get entries from AppCertDlls key
+
+8. appcompatcache v.20150611 [System]
+   - Parse files from System hive Shim Cache
+
+9. appcompatcache_tln v.20150429 [System]
+   - Parse files from System hive Shim Cache
+
+10. appcompatflags v.20130930 [NTUSER.DAT, Software]
+   - Extracts AppCompatFlags for Windows.
+
+11. appinitdlls v.20130425 [Software]
+   - Gets contents of AppInit_DLLs value
+
+12. applets v.20140723 [NTUSER.DAT]
+   - Gets contents of user's Applets key
+
+13. applets_tln v.20120613 [NTUSER.DAT]
+   - Gets contents of user's Applets key (TLN)
+
+14. apppaths v.20120524 [Software]
+   - Gets content of App Paths subkeys
+
+15. apppaths_tln v.20130429 [Software]
+   - Gets content of App Paths subkeys (TLN)
+
+16. appspecific v.20120820 [NTUSER.DAT]
+   - Gets contents of user's Intellipoint\AppSpecific subkeys
+
+17. ares v.20140730 [NTUSER.DAT]
+   - Gets contents of user's Software/Ares key
+
+18. assoc v.20080815 [Software]
+   - Get list of file ext associations
+
+19. at v.20140821 [Software]
+   - Checks Software hive for AT jobs
+
+20. attachmgr v.20130425 [NTUSER.DAT]
+   - Checks user's keys that manage the Attachment Manager functionality
+
+21. attachmgr_tln v.20130425 [NTUSER.DAT]
+   - Checks user's keys that manage the Attachment Manager functionality (TLN)
+
+22. at_tln v.20140821 [Software]
+   - Checks Software hive for AT jobs
+
+23. audiodev v.20141112 [Software]
+   - Gets audio capture/render devices
+
+24. auditfail v.20081212 [System]
+   - Get CrashOnAuditFail value
+
+25. auditpol v.20121128 [Security]
+   - Get audit policy from the Security hive file
+
+26. autoendtasks v.20081128 [NTUSER.DAT]
+   - Automatically end a non-responsive task
+
+27. autorun v.20081212 [NTUSER.DAT]
+   - Gets autorun settings
+
+28. backuprestore v.20130904 [System]
+   - Gets the contents of the FilesNotToSnapshot, KeysNotToRestore, and FilesNotToBackup keys
+
+29. banner v.20081119 [Software]
+   - Get HKLM\SOFTWARE.. Logon Banner Values
+
+30. baseline v.20130211 [All]
+   - Scans a hive file, checking sizes of binary value data
+
+31. bho v.20130408 [Software]
+   - Gets Browser Helper Objects from Software hive
+
+32. bitbucket v.20080418 [Software]
+   - Get HKLM\..\BitBucket keys\values
+
+33. bitbucket_user v.20091020 [NTUSER.DAT]
+   - TEST - Get user BitBucket values
+
+34. brisv v.20130429 [NTUSER.DAT]
+   - Detect artifacts of a Troj.Brisv.A infection
+
+35. btconfig v.20130117 [Software]
+   - Determines BlueTooth devices 'seen' by BroadComm drivers
+
+36. cached v.20150608 [NTUSER.DAT]
+   - Gets cached Shell Extensions from NTUSER.DAT hive
+
+37. cached_tln v.20150608 [NTUSER.DAT]
+   - Gets cached Shell Extensions from NTUSER.DAT hive (TLN)
+
+38. cain v.20110204 [NTUSER.DAT]
+   - Extracts details for Cain & Abel by oxid.it
+
+39. ccleaner v.20120128 [NTUSER.DAT]
+   - Gets User's CCleaner Settings
+
+40. cdstaginginfo v.20131118 [NTUSER.DAT]
+   - Gets contents of user's CD Burning\StagingInfo key
+
+41. clampi v.20091019 [NTUSER.DAT]
+   - TEST - Checks for keys set by Trojan.Clampi PROT module
+
+42. clampitm v.20100624 [NTUSER.DAT]
+   - Checks for IOCs for Clampi (per Trend Micro)
+
+43. clsid v.20130603 [Software]
+   - Get list of CLSID/registered classes
+
+44. cmdproc v.20130425 [NTUSER.DAT]
+   - Autostart - get Command Processor\AutoRun value from NTUSER.DAT hive
+
+45. cmdproc_tln v.20130425 [NTUSER.DAT]
+   - Autostart - get Command Processor\AutoRun value from NTUSER.DAT hive (TLN)
+
+46. cmd_shell v.20130405 [Software]
+   - Gets shell open cmds for various file types
+
+47. cmd_shell_tln v.20130425 [Software]
+   - Gets shell open cmds for various file types
+
+48. cmd_shell_u v.20130405 [USRCLASS.DAT]
+   - Gets shell open cmds for various file types from USRCLASS.DAT
+
+49. codeid v.20100608 [Software]
+   - Gets CodeIdentifier DefaultLevel value
+
+50. comdlg32 v.20121008 [NTUSER.DAT]
+   - Gets contents of user's ComDlg32 key
+
+51. comfoo v.20131007 [System]
+   - Checks known Comfoo values
+
+52. compdesc v.20080324 [NTUSER.DAT]
+   - Gets contents of user's ComputerDescriptions key
+
+53. compname v.20090727 [System]
+   - Gets ComputerName and Hostname values from System hive
+
+54. cpldontload v.20100116 [NTUSER.DAT]
+   - Gets contents of user's Control Panel don't load key
+
+55. crashcontrol v.20131210 [System]
+   - Get crash control information
+
+56. ctrlpnl v.20100116 [Software]
+   - Get Control Panel info from Software hive
+
+57. ddm v.20081129 [System]
+   - Get DDM data from Control Subkey
+
+58. ddo v.20140414 [NTUSER.DAT]
+   - Gets user's DeviceDisplayObjects key contents
+
+59. decaf v.20110210 [NTUSER.DAT]
+   - Extracts the EULA value for DECAF.
+
+60. defbrowser v.20091116 [Software]
+   - Gets default browser setting from HKLM
+
+61. del v.20140807 [All]
+   - Parse hive, print deleted keys/values
+
+62. del_tln v.20140807 [All]
+   - Parse hive, print deleted keys/values
+
+63. dependency_walker v.20110204 [NTUSER.DAT]
+   - Extracts Recent File List for Dependency Walker.
+
+64. devclass v.20130630 [System]
+   - Get USB device info from the DeviceClasses keys in the System hive
+
+65. dfrg v.20110321 [Software]
+   - Gets content of Dfrg BootOptim. key
+
+66. diag_sr v.20120515 [System]
+   - Get Diag\SystemRestore values and data
+
+67. direct v.20120513 [Software]
+   - Searches Direct* keys for MostRecentApplication subkeys
+
+68. direct_tln v.20120608 [Software]
+   - Searches Direct* keys for MostRecentApplication subkeys (TLN)
+
+69. disablelastaccess v.20090118 [System]
+   - Get NTFSDisableLastAccessUpdate value
+
+70. disablesr v.20120914 [Software]
+   - Gets the value that turns System Restore either on or off
+
+71. dllsearch v.20100824 [System]
+   - Get crash control information
+
+72. domains v.20100116 [NTUSER.DAT]
+   - Gets contents Internet Settings\ZoneMap\Domains key
+
+73. drivers32 v.20130408 [Software]
+   - Get values from the Drivers32 key
+
+74. drwatson v.20081219 [Software]
+   - Gets Dr. Watson settings from Software hive
+
+75. emdmgmt v.20120207 [Software]
+   - Gets contents of EMDMgmt subkeys and values
+
+76. environment v.20150910 [NTUSER.DAT]
+   - Extracts user's Environment paths from NTUSER.DAT
+
+77. esent v.20101202 [Software]
+   - Get ESENT\Process key contents
+
+78. etos v.20150325 [Software]
+   - Checks Software hive for indicators of Etos malware
+
+79. eventlog v.20090112 [System]
+   - Get EventLog configuration info
+
+80. eventlogs v.20081219 [System]
+   - Gets Event Log settings from System hive
+
+81. fileexts v.20080818 [NTUSER.DAT]
+   - Get user FileExts values
+
+82. filehistory v.20120620 [NTUSER.DAT]
+   - Gets filehistory settings
+
+83. fileless v.20150110 [All]
+   - Scans a hive file looking for fileless malware entries
+
+84. findexes v.20090728 [All]
+   - Scans a hive file looking for binary value data that contains MZ
+
+85. fw_config v.20080328 [System]
+   - Gets the Windows Firewall config from the System hive
+
+86. gauss v.20120809 [Software]
+   - Checks Reliability key for TimeStampforUI value
+
+87. gpohist v. [Software]
+   - Collects system/user GPO history
+
+88. gpohist_tln v. [Software]
+   - Collects system/user GPO history (TLN)
+
+89. gthist v.20100218 [NTUSER.DAT]
+   - Gets Google Toolbar Search History
+
+90. arpcache v.20090413 [NTUSER.DAT]
+   - Retrieves CurrentVersion\App Management\ARPCache entries
+
+91. bthport v.20130115 [System]
+   - Gets Bluetooth-connected devices from System hive
+
+92. controlpanel v.20080428 [NTUSER.DAT]
+   - Look for RecentTask* values in ControlPanel key (Vista)
+
+93. dnschanger v.20120203 [System]
+   - Check for indication of DNSChanger infection.
+
+94. gtwhitelist v.20100218 [NTUSER.DAT]
+   - Gets Google Toolbar whitelist values
+
+95. javafx v.20110322 [NTUSER.DAT]
+   - Gets contents of user's JavaFX key
+
+96. menuorder v.20121005 [NTUSER.DAT]
+   - Gets contents of user's MenuOrder subkeys
+
+97. netsvcs v.20130905 [System]
+   - Checks services for netsvcs entries
+
+98. osversion v.20120601 [NTUSER.DAT]
+   - Checks for OSVersion value
+
+99. profilelist v.20100219 [Software]
+   - Get content of ProfileList key
+
+100. rlo v.20130904 [All]
+   - Parse hive, check key/value names for RLO character
+
+101. shc v.20130412 [NTUSER.DAT]
+   - Gets SHC entries from user hive
+
+102. srun_tln v.20130425 [Software]
+   - [Autostart] Get autostart key contents from Software hive (TLN)
+
+103. termcert v.20110316 [System]
+   - Gets Terminal Server certificate
+
+104. unreadmail v.20100218 [NTUSER.DAT]
+   - Gets contents of Unreadmail key
+
+105. vmware_vsphere_client v.20110204 [NTUSER.DAT]
+   - Extract recent connections list for VMware vSphere Client.
+
+106. handler v.20150826 [Software]
+   - Checks HKCR/Network/SharingHandler (default) value
+
+107. haven_and_hearth v.20110204 [NTUSER.DAT]
+   - Extracts the username and savedtoken for Haven & Hearth.
+
+108. hibernate v.20081216 [System]
+   - Check hibernation status
+
+109. ide v.20080418 [System]
+   - Get IDE device info from the System hive file
+
+110. iejava v.20130429 [NTUSER.DAT]
+   - Checks NTUSER for status of kill bit for IE Java ActiveX control
+
+111. ie_main v.20091019 [NTUSER.DAT]
+   - Gets values beneath user's Internet Explorer\Main key
+
+112. ie_settings v.20130731 [NTUSER.DAT]
+   - Gets important user IE settings
+
+113. ie_version v.20140717 [Software]
+   - Get IE version and build
+
+114. ie_zones v.20140611 [NTUSER.DAT;Software]
+   - Get IE Zone settings
+
+115. imagedev v.20140104 [System]
+   -  -- 
+
+116. imagefile v.20131007 [Software]
+   - Checks IFEO subkeys for Debugger & CWDIllegalInDllSearch values
+
+117. init_dlls v.20110309 [Software]
+   - Check for odd **pInit_Dlls keys
+
+118. inprocserver v.20141126 [Software]
+   - Checks CLSID InProcServer32 values for indications of malware
+
+119. installedcomp v.20130911 [Software]
+   - Get info about Installed Components and StubPath values
+
+120. installer v.20120917 [Software]
+   - Determines product install information
+
+121. internet_explorer_cu v.20120528 [NTUSER.DAT]
+   - Get HKCU information on Internet Explorer
+
+122. internet_settings_cu v.20120528 [NTUSER.DAT]
+   - Get HKCU information on Internet Settings
+
+123. itempos v.20130514 [NTUSER.DAT]
+   - Shell/Bags/1/Desktop ItemPos* value parsing; Win7 NTUSER.DAT hives
+
+124. javasoft v.20130216 [Software]
+   - Gets contents of JavaSoft/UseJava2IExplorer value
+
+125. kankan v.20131011 [NTUSER.DAT, Software]
+   - Extracts Office app Addin Settings
+
+126. kb950582 v.20081212 [Software]
+   - KB950582 - Gets autorun settings from HKLM hive
+
+127. kbdcrash v.20081212 [System]
+   - Checks to see if system is config to crash via keyboard
+
+128. knowndev v.20140414 [NTUSER.DAT]
+   - Gets user's KnownDevices key contents
+
+129. landesk v.20130326 [Software]
+   - Get list of programs monitored by LANDESK - Software hive
+
+130. landesk_tln v.20130214 [Software]
+   - Get list of programs monitored by LANDESK from Software hive
+
+131. lazyshell v.20131007 [Software]
+   - Checks for keys/values assoc. with LazyShell
+
+132. legacy v.20120524 [System]
+   - Lists LEGACY_* entries in Enum\Root key
+
+133. legacy_tln v.20120620 [System]
+   - Lists LEGACY_* entries in Enum\Root key in TLN format
+
+134. licenses v.20120305 [Software]
+   - Get contents of HKLM/Software/Licenses key
+
+135. listsoft v.20080324 [NTUSER.DAT]
+   - Lists contents of user's Software key
+
+136. liveContactsGUID v.20110221 [NTUSER.DAT]
+   - Gets user Windows Live Messenger GUIDs
+
+137. load v.20100811 [NTUSER.DAT]
+   - Gets load and run values from user hive
+
+138. logonusername v.20080324 [NTUSER.DAT]
+   - Get user's Logon User Name value
+
+139. lsasecrets v.20140408 [Security]
+   - TEST - Get update times for LSA Secrets
+
+140. lsa_packages v.20140730 [System]
+   - Lists various *Packages key contents beneath LSA key
+
+141. macaddr v.20090118 [Software]
+   -  -- 
+
+142. malware v.20150828 [All]
+   - Checks for malware-related keys/values
+
+143. mixer v.20141112 [NTUSER.DAT]
+   - Checks user's audio mixer settings
+
+144. mixer_tln v.20141112 [NTUSER.DAT]
+   - Checks user's audio mixer info
+
+145. mmc v.20080324 [NTUSER.DAT]
+   - Get contents of user's MMC\Recent File List key
+
+146. mmc_tln v.20120828 [NTUSER.DAT]
+   - Get contents of user's MMC\Recent File List key (TLN)
+
+147. mmo v.20130217 [NTUSER.DAT]
+   - Checks NTUSER for Multimedia\Other values [malware]
+
+148. mndmru v.20080324 [NTUSER.DAT]
+   - Get contents of user's Map Network Drive MRU
+
+149. mndmru_tln v.20120829 [NTUSER.DAT]
+   - Get user's Map Network Drive MRU (TLN)
+
+150. mountdev v.20130530 [System]
+   - Return contents of System hive MountedDevices key
+
+151. mountdev2 v.20140721 [System]
+   - Return contents of System hive MountedDevices key
+
+152. mp2 v.20120330 [NTUSER.DAT]
+   - Gets user's MountPoints2 key contents
+
+153. mp3 v.20120330 [NTUSER.DAT]
+   - Gets user's MountPoints2 key contents
+
+154. mpmru v.20080324 [NTUSER.DAT]
+   - Gets user's Media Player RecentFileList values
+
+155. mrt v.20080804 [Software]
+   - Check to see if Malicious Software Removal Tool has been run
+
+156. msis v.20090911 [Software]
+   - Determine MSI packages installed on the system
+
+157. mspaper v.20080324 [NTUSER.DAT]
+   - Gets images listed in user's MSPaper key
+
+158. muicache v.20130425 [NTUSER.DAT,USRCLASS.DAT]
+   - Gets EXEs from user's MUICache key
+
+159. muicache_tln v.20130425 [NTUSER.DAT,USRCLASS.DAT]
+   - Gets EXEs from user's MUICache key (TLN)
+
+160. nero v.20100218 [NTUSER.DAT]
+   - Gets contents of Ahead\Nero Recent File List subkeys
+
+161. netassist v.20110427 [NTUSER.DAT]
+   - Check for Firefox Extensions.
+
+162. network v.20080324 [System]
+   - Gets info from System\Control\Network GUIDs
+
+163. networkcards v.20080325 [Software]
+   - Get NetworkCards
+
+164. networklist v.20150812 [Software]
+   - Collects network info from Vista+ NetworkList key
+
+165. networklist_tln v.20150812 [Software]
+   - Collects network info from NetworkList key (TLN)
+
+166. networkuid v.20100312 [Software]
+   - Gets Network key UID value
+
+167. nic v.20100401 [System]
+   - Gets NIC info from System hive
+
+168. nic2 v.20150812 [System]
+   - Gets NIC info from System hive
+
+169. nic_mst2 v.20080324 [System]
+   - Gets NICs from System hive; looks for MediaType = 2
+
+170. nolmhash v.20100712 [System]
+   - Gets NoLMHash value
+
+171. ntusernetwork v.20110601 [NTUSER.DAT]
+   - Returns contents of user's Network subkeys
+
+172. odysseus v.20110202 [NTUSER.DAT]
+   - Extract registry keys for Odysseus by bindshell.net.
+
+173. officedocs v.20080324 [NTUSER.DAT]
+   - Gets contents of user's Office doc MRU keys
+
+174. officedocs2010 v.2011090 [NTUSER.DAT]
+   - Gets user's Office 2010 doc MRU values
+
+175. officedocs2010_tln v.20120717 [NTUSER.DAT]
+   - Gets user's Office 2010 doc MRU values; TLN output
+
+176. oisc v.20091125 [NTUSER.DAT]
+   - Gets contents of user's Office Internet Server Cache
+
+177. olsearch v.20130124 [NTUSER.DAT]
+   - Gets contents of user's OutLook Searches
+
+178. opencandy v.20131008 [Software]
+   - Detect possible presence of OpenCandy adware
+
+179. osversion_tln v.20120608 [NTUSER.DAT]
+   - Checks for OSVersion value (TLN)
+
+180. outlook v.20100218 [NTUSER.DAT]
+   - Gets user's Outlook settings
+
+181. outlook2 v.20130308 [NTUSER.DAT]
+   - Gets MAPI (Outlook) settings *BETA*
+
+182. pagefile v.20140505 [System]
+   - Get info on pagefile(s)
+
+183. pending v.20130711 [System]
+   - Gets contents of PendingFileRenameOperations value
+
+184. phdet v.20120817 [System]
+   - Check for a Phdet infection
+
+185. photos v.20130102 [USRCLASS.DAT]
+   - Shell/BagMRU traversal in Win7 USRCLASS.DAT hives
+
+186. polacdms v.20100531 [Security]
+   - Get local machine SID from Security hive
+
+187. policies_u v.20091021 [NTUSER.DAT]
+   - Get values from the user's Policies key
+
+188. port_dev v.20090118 [Software]
+   - Parses Windows Portable Devices key (Vista)
+
+189. prefetch v.20120914 [SYSTEM]
+   - Gets the the Prefetch Parameters
+
+190. printermru v.20091125 [NTUSER.DAT]
+   - Gets user's Printer Wizard MRU listing
+
+191. printers v.20090223 [NTUSER.DAT]
+   - Get user's printers
+
+192. privoxy v.20110204 [NTUSER.DAT]
+   - Extracts the install path for Privoxy.
+
+193. processor_architecture v.20140505 [System]
+   - Get from the processor architecture from the System's environment key
+
+194. product v.20100325 [Software]
+   - Get installed product info
+
+195. productpolicy v.20091116 [System]
+   - Parse ProductPolicy value (Vista & Win2008 ONLY)
+
+196. producttype v.20100325 [System]
+   - Queries System hive for Windows Product info
+
+197. profiler v.20140510 [NTUSER.DAT, System]
+   - Environment profiler information
+
+198. proxysettings v.20081224 [NTUSER.DAT]
+   - Gets contents of user's Proxy Settings
+
+199. publishingwizard v.20110202 [NTUSER.DAT]
+   - Extract AddNetPlace\LocationMRU for Microsoft Publishing Wizard
+
+200. putty v.20110204 [NTUSER.DAT]
+   - Extracts the saved SshHostKeys for PuTTY.
+
+201. rdphint v.20090715 [NTUSER]
+   - Gets hosts logged onto via RDP and the Domain\Username
+
+202. rdpport v.20100713 [System]
+   - Queries System hive for RDP Port
+
+203. reading_locations v.20140130 [NTUSER.DAT]
+   - Gets user's MS Word 2013 Reading Locations
+
+204. realplayer6 v.20080324 [NTUSER.DAT]
+   - Gets user's RealPlayer v6 MostRecentClips(Default) values
+
+205. realvnc v.20091125 [NTUSER.DAT]
+   - Gets user's RealVNC MRU listing
+
+206. recentdocs v.20100405 [NTUSER.DAT]
+   - Gets contents of user's RecentDocs key
+
+207. recentdocs_tln v.20140220 [NTUSER.DAT]
+   - Gets contents of user's RecentDocs key (TLN)
+
+208. regback v.20100219 [Software]
+   - List all tasks along with logfile name and last written date/time
+
+209. regin v.20141124 [System]
+   - Detect Regin
+
+210. regtime v.20080324 [All]
+   - Dumps entire hive - all keys sorted by LastWrite time
+
+211. regtime_tln v.20080324 [All]
+   - Dumps entire hive - all keys sorted by LastWrite time
+
+212. removdev v.200800611 [Software]
+   - Parses Windows Portable Devices key (Vista)
+
+213. renocide v.20130425 [Software]
+   - Check for Renocide malware
+
+214. reveton v.20131010 [NTUSER.DAT]
+   - Checks for possible Reveton infection
+
+215. rootkit_revealer v.20110204 [NTUSER.DAT]
+   - Extracts the EULA value for Sysinternals Rootkit Revealer.
+
+216. routes v.20100817 [System]
+   - Get persistent routes
+
+217. runmru v.20080324 [NTUSER.DAT]
+   - Gets contents of user's RunMRU key
+
+218. runmru_tln v.20120828 [NTUSER.DAT]
+   - Gets contents of user's RunMRU key (TLN)
+
+219. safeboot v.20081216 [System]
+   - Check SafeBoot entries
+
+220. samparse v.20120722 [SAM]
+   - Parse SAM file for user & group mbrshp info
+
+221. samparse_tln v.20120827 [SAM]
+   - Parse SAM file for user acct info (TLN)
+
+222. schedagent v.20100817 [Software]
+   - Get SchedulingAgent key contents
+
+223. secctr v.20100310 [Software]
+   - Get data from Security Center key
+
+224. secrets v.20140730 [Security]
+   - Get the last write time for the Policy\Secrets key
+
+225. secrets_tln v.20140814 [Security]
+   - Get the last write time for the Policy\Secrets key
+
+226. securityproviders v.20120312 [System]
+   - Gets SecurityProvider value from System hive
+
+227. services v.20080507 [System]
+   - Lists services/drivers in Services key by LastWrite times
+
+228. sevenzip v.20130315 [NTUSER.DAT]
+   - Gets records of histories from 7-Zip keys
+
+229. sfc v.20100305 [Software]
+   - Get SFC values
+
+230. shares v.20140730 [System]
+   - Get list of shares from System hive file
+
+231. shellbags v.20150325 [USRCLASS.DAT]
+   - Shell/BagMRU traversal in Win7 USRCLASS.DAT hives
+
+Error: Can't locate shellitems.pl in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.18.2 /usr/local/share/perl/5.18.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.18 /usr/share/perl/5.18 /usr/local/lib/site_perl .) at plugins/shellbags_test.pl line 12.
+Compilation failed in require at rip.pl line 92.
+
+232. shellbags_tln v.20120810 [USRCLASS.DAT]
+   - Shell/BagMRU traversal in Win7 USRCLASS.DAT hives
+
+233. shellbags_xp v.20130102 [NTUSER.DAT]
+   - Shell/BagMRU traversal in XP NTUSER.DAT hives
+
+234. shellexec v.20130410 [Software]
+   - Gets ShellExecuteHooks from Software hive
+
+235. shellext v.20100515 [Software]
+   - Gets Shell Extensions from Software hive
+
+236. shellfolders v.20090115 [NTUSER.DAT]
+   - Retrieve user Shell Folders values
+
+237. shelloverlay v.20100308 [Software]
+   - Gets ShellIconOverlayIdentifiers values
+
+238. shutdown v.20080324 [System]
+   - Gets ShutdownTime value from System hive
+
+239. shutdowncount v.20080709 [System]
+   - Retrieves ShutDownCount value
+
+240. sizes v.20150527 [All]
+   - Scans a hive file looking for binary value data of a min size
+
+241. skype v.20100713 [NTUSER.DAT]
+   - Gets data user's Skype key
+
+242. snapshot v.20080725 [Software]
+   - Check ActiveX comp kill bit; Access Snapshot
+
+243. snapshot_viewer v.20110210 [NTUSER.DAT]
+   - Extracts Recent File List for Microsoft Snapshot Viewer.
+
+244. soft_run v.20130603 [Software]
+   - [Autostart] Get autostart key contents from Software hive
+
+245. spp_clients v.20130429 [Software]
+   - Determines volumes monitored by VSS
+
+246. sql_lastconnect v.20090112 [Software]
+   - MDAC cache of successful connections
+
+247. ssh_host_keys v.20120809 [NTUSER.DAT]
+   - Extracts Putty/WinSCP SSH Host Keys
+
+248. ssid v.20100301 [Software]
+   - Get WZCSVC SSID Info
+
+249. startmenuinternetapps_cu v.20101219 [NTUSER.DAT]
+   - Start Menu Internet Applications info current user
+
+250. startmenuinternetapps_lm v.20101219 [SOFTWARE]
+   - Start Menu Internet Applications info
+
+251. startpage v.20100330 [NTUSER.DAT]
+   - Gets contents of user's StartPage key
+
+252. startup v.20131028 [NTUSER.DAT]
+   - Gets user's Startup Folder location
+
+253. stillimage v.20100222 [System]
+   - Get info on StillImage devices
+
+254. susclient v.20140326 [Software]
+   - Extracts SusClient* info, including HDD SN (if avail)
+
+255. svc v.20131010 [System]
+   - Lists Services key contents by LastWrite time (CSV)
+
+256. svcdll v.20130603 [System]
+   - Lists Services keys with ServiceDll values
+
+257. svchost v.20100322 [Software]
+   - Get entries from SvcHost key
+
+258. svc_plus v.20120625 [System]
+   - Lists services/drivers in Services key by LastWrite times in a short format with warnings for type mismatches
+^^^^ Indicates non-standard Type
+<<<< Indicates Start mismatch for Driver
+**** Indicates ObjectName mismatch for Driver
+>>>> Indicates Start mismatch for Service
+++++ Indicates nonstandard ObjectName for Service.
+
+259. svc_tln v.20130911 [System]
+   - Lists Services key contents by LastWrite time (CSV)
+
+260. sysinternals v.20080324 [NTUSER.DAT]
+   - Checks for SysInternals apps keys
+
+261. sysinternals_tln v.20080324 [NTUSER.DAT]
+   - Checks for SysInternals apps keys (TLN)
+
+262. systemindex v.20120716 [Software]
+   - Gets systemindex\..\Paths info from Windows Search key
+
+263. teamviewer v.20150627 [SOFTWARE]
+   - Checks for installation/removal of TeamViewer
+
+264. termserv v.20130307 [System]
+   - Gets Terminal Server values from System hive
+
+265. timezone v.20130830 [System]
+   - Get TimeZoneInformation key contents
+
+266. tracing v.20120509 [Software]
+   - Gets list of apps that can be traced
+
+267. tracing_tln v.20120608 [Software]
+   - Gets list of apps that can be traced (TLN)
+
+268. trappoll v.20120305 [Software]
+   - Get TrapPollTimeMilliSecs value, if found
+
+269. trustrecords v.20120716 [NTUSER.DAT]
+   - Gets user's Office 2010 TrustRecords values
+
+270. trustrecords_tln v.20120717 [NTUSER.DAT]
+   - Gets user's Office 2010 TrustRecords values; TLN output
+
+271. tsclient v.20120827 [NTUSER.DAT]
+   - Displays contents of user's Terminal Server Client\Default key
+
+272. tsclient_tln v.20120827 [NTUSER.DAT]
+   - Displays contents of user's Terminal Server Client key (TLN)
+
+273. typedpaths v.20100330 [NTUSER.DAT]
+   - Gets contents of user's typedpaths key
+
+274. typedpaths_tln v.20120828 [NTUSER.DAT]
+   - Gets contents of user's typedpaths key (TLN)
+
+275. typedurls v.20080324 [NTUSER.DAT]
+   - Returns contents of user's TypedURLs key.
+
+276. typedurlstime v.20120613 [NTUSER.DAT]
+   - Returns contents of user's TypedURLsTime key.
+
+277. typedurlstime_tln v.20120613 [NTUSER.DAT]
+   - Returns contents of Win8 user's TypedURLsTime key (TLN).
+
+278. typedurls_tln v.20120827 [NTUSER.DAT]
+   - Returns MRU for user's TypedURLs key (TLN)
+
+279. uac v.20130213 [Software]
+   - Get Select User Account Control (UAC) Values from HKLMSOFTWAREMicrosoftWindowsCurrentVersionPoliciesSystem
+
+280. uninstall v.20140512 [Software, NTUSER.DAT]
+   - Gets contents of Uninstall keys from Software, NTUSER.DAT hives
+
+281. uninstall_tln v.20120523 [Software, NTUSER.DAT]
+   - Gets contents of Uninstall keys from Software, NTUSER.DAT hives(TLN format)
+
+282. urlzone v.20090526 [Software]
+   - URLZONE detection
+
+283. urun_tln v.20130425 [NTUSER.DAT]
+   - [Autostart] Get autostart key contents from NTUSER.DAT hive
+
+284. usb v.20141111 [System]
+   - Get USB key info
+
+285. usbdevices v.20140416 [System]
+   - Parses Enum\USB key for USB & WPD devices
+
+286. usbstor v.20141111 [System]
+   - Get USBStor key info
+
+287. usbstor2 v.20080825 [System]
+   - Get USBStor key info; csv output
+
+288. usbstor3 v.20100312 [System]
+   - Get USBStor key info
+
+289. userassist v.20130603 [NTUSER.DAT]
+   - Displays contents of UserAssist subkeys
+
+290. userassist_tln v.20130603 [NTUSER.DAT]
+   - Displays contents of UserAssist subkeys in TLN format
+
+291. userinfo v.20130513 [NTUSER.DAT]
+   - Gets contents of MS Office UserInfo values
+
+292. userlocsvc v.20090411 [NTUSER.DAT]
+   - Displays contents of User Location Service\Client key
+
+293. user_run v.20140115 [NTUSER.DAT]
+   - [Autostart] Get autostart key contents from NTUSER.DAT hive
+
+294. user_win v.20080415 [NTUSER.DAT]
+   -  -- 
+
+295. vawtrak v.20131010 [NTUSER.DAT]
+   - Checks for possible VawTrak infection
+
+296. virut v.20130425 [Software]
+   - Detect Virut artifacts
+
+297. vista_bitbucket v.20080420 [NTUSER.DAT]
+   - Get BitBucket settings from Vista via NTUSER.DAT
+
+298. vmplayer v.20110204 [NTUSER.DAT]
+   - Extracts full filepath for recent VMware Player VM images.
+
+299. vnchooksapplicationprefs v.20110208 [NTUSER.DAT]
+   - Get VNCHooks Application Prefs list
+
+300. vncviewer v.20121231 [NTUSER.DAT]
+   - Get VNCViewer system list
+
+301. volinfocache v.20120822 [Software]
+   - Gets VolumeInfoCache from Windows Search key
+
+302. wallpaper v.200800810 [NTUSER.DAT]
+   - Parses Wallpaper MRU Entries
+
+303. warcraft3 v.20110202 [NTUSER.DAT]
+   - Extract usernames for Warcraft 3.
+
+304. wbem v.20120306 [Software]
+   - Get contents of WBEM\WDM key
+
+305. winbackup v.20120812 [Software]
+   - Get Windows Backup
+
+306. winevt v.20140402 [Software]
+   - Get the Windows event log policy from the WinevtChannels key
+
+307. winlogon v.20130425 [Software]
+   - Get values from the WinLogon key
+
+308. winlogon_tln v.20130429 [Software]
+   - Alerts on values from the WinLogon key (TLN)
+
+309. winlogon_u v.20130425 [NTUSER.DAT]
+   - Get values from the user's WinLogon key
+
+310. winnt_cv v.20080609 [Software]
+   - Get & display the contents of the Windows NT\CurrentVersion key
+
+311. winrar v.20080819 [NTUSER.DAT]
+   - Get WinRAR\ArcHistory entries
+
+312. winrar2 v.20150820 [NTUSER.DAT]
+   - Get WinRAR\ArcHistory, WinRAR\DialogEditHistory\ArcName, WinRAR\DialogEditHistory\ExtrPath entries
+
+313. winrar_tln v.20120829 [NTUSER.DAT]
+   - Get WinRAR\ArcHistory entries (TLN)
+
+314. winscp v.20140203 [NTUSER.DAT]
+   - Gets user's WinSCP 2 data
+
+315. winscp_sessions v.20120809 [NTUSER.DAT]
+   - Extracts WinSCP stored session data
+
+316. winver v.20081210 [Software]
+   - Get Windows version
+
+317. winvnc v.20110202 [NTUSER.DAT]
+   - Extracts the encrypted password for WinVNC.
+
+318. winzip v.20140730 [NTUSER.DAT]
+   - Get WinZip extract and filemenu values
+
+319. win_cv v.20090312 [Software]
+   - Get & display the contents of the Windows\CurrentVersion key
+
+320. wordwheelquery v.20100330 [NTUSER.DAT]
+   - Gets contents of user's WordWheelQuery key
+
+321. wpdbusenum v.20141111 [System]
+   - Get WpdBusEnumRoot subkey info
+
+322. xpedition v.20120722 [System]
+   - Queries System hive for XP Edition info
+
+323. yahoo_cu v.20101219 [NTUSER.DAT]
+   - Yahoo Messenger parser
+
+324. yahoo_lm v.20101219 [SOFTWARE]
+   - Yahoo Messenger parser
+

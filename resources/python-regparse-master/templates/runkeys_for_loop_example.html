@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <h2>Windows Registry - Runkeys Plugin</h2>
+</head>
+<body>
+    {% block body %}
+        {% for item in runkey_list %}
+            <strong>{{ item[0] }}</strong>
+            <p>{{ item[1]|indent(4, true) }} {{ item[2]|indent(4, true) }}</p>
+            <blockquote><li>{{ item[3]|indent(4, true) }}</li></blockquote>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

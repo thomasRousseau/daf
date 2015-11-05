@@ -59,8 +59,8 @@ $str =~ s/($path[scalar(@path) - 1])//;
 # Linux
 #push(@INC,$str);
 
-#my $plugindir = $str."plugins/";
-my $plugindir = File::Spec->catfile("tools/regripper/plugins");
+my $plugindir = $str."plugins/";
+#my $plugindir = File::Spec->catfile("tools/regripper/plugins");
 #my $plugindir = File::Spec->catfile("plugins");
 #print "Plugins Dir = ".$plugindir."\n";
 # End code update

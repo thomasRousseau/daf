@@ -41,7 +41,7 @@ def find_registry_key_by_name(folder, name, hive_list=[SYSTEM_PATH, SOFTWARE_PAT
                         return subkey
             except: 
                 pass
-    print "Registry key " + name + " not found :("
+    print "Registry key \"" + name + "\" not found :("
     return ""
 
 

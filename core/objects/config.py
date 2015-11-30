@@ -87,7 +87,6 @@ class Configuration():
                     if "ProfileImagePath" in k['Name']):
                     if key['Value'].split("\\")[-1] == username:
                         user_folder = str(key['Value'][3:].replace("\\", "/"))
-                        print user_folder
                         if os.path.isfile(self.folder + user_folder +
                             "/NTUSER.DAT"):
                             users_hives.append((username,

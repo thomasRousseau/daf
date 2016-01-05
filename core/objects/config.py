@@ -164,7 +164,7 @@ class Configuration():
             '%a, %d %B %Y %H:%M:%S %Z')
 
 
-    def get_computer_name(self, folder):
+    def get_computer_name(self):
         return registry.get_registry_key_specific_value(self.system_hive,
             self.current_control_set + "\\Control\\ComputerName\\ComputerName",
             "ComputerName")[0]['Value']

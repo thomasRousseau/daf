@@ -21,7 +21,7 @@ import ConfigParser
 
 
 class Session(object):
-    def __init__(self, session_name, directory, plugins_directory):
+    def __init__(self, input_disk, session_name, directory, plugins_directory):
         """Creates a new user session.
         
         Returns:
@@ -29,6 +29,9 @@ class Session(object):
         """
         # Start time of the session
         start_time = datetime.now().strftime("%Y%m%d-%H%M%S")
+
+        # Path to the disk to analyze
+        self.input_disk = input_disk
 
         # Session name
         self._name = session_name
@@ -79,13 +82,17 @@ class Session(object):
                 importlib.import_module(path.replace("/", "."))
                 for f in files:
                     if fnmatch(f, "*.py") and f != "__init__.py":
-                        plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
-                        plugin = importlib.import_module(plugin_file)
-                        for plugin_class in pyclbr.readmodule(plugin_file):
-                            pclass = getattr(plugin, plugin_class)(self.renderer.ipshell, self)
-                            # Create the magic commands for ipython
-                            self.renderer.ipshell.register_magics(pclass)
-            except:
+                        try:
+                            plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
+                            plugin = importlib.import_module(plugin_file)
+                            for plugin_class in pyclbr.readmodule(plugin_file):
+                                pclass = getattr(plugin, plugin_class)(self.renderer.ipshell, self)
+                                # Create the magic commands for ipython
+                                self.renderer.ipshell.register_magics(pclass)
+                        except:
+                            print("Error when trying to load plugins from file " + path + "/" + f)
+                            pass
+            except: 
                 print("Error during plugins load")
                 pass
 

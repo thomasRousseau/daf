@@ -18,6 +18,8 @@ import pyclbr
 import sys
 import shutil
 import ConfigParser
+import types
+import inspect
 
 
 class Session(object):
@@ -43,7 +45,7 @@ class Session(object):
         self._plugins_directory = plugins_directory
 
         # Set a renderer to handle graphical stuff
-        self.renderer = renderer.IPythonRenderer(self._name)
+        self.renderer = renderer.ShellRenderer(self._name, self._directory)
 
         # Create folder and files for the session
         self.create_session_files()
@@ -68,6 +70,9 @@ class Session(object):
         parser.read(config_location)
         parser.set("session_information", "session_name", self._name)
         parser.write(config_file)
+        config_file.close()
+        results_location = "".join([self._directory, "/session_results.ini"])
+        results_file = open(results_location, "a")
 
 
     def launch_plugins(self):
@@ -86,9 +91,12 @@ class Session(object):
                             plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
                             plugin = importlib.import_module(plugin_file)
                             for plugin_class in pyclbr.readmodule(plugin_file):
-                                pclass = getattr(plugin, plugin_class)(self.renderer.ipshell, self)
-                                # Create the magic commands for ipython
-                                self.renderer.ipshell.register_magics(pclass)
+                                pclass = getattr(plugin, plugin_class)(self)
+                                for function in [a for a in inspect.getmembers(pclass, predicate=inspect.ismethod) if a[0]!="__init__"]:
+                                    setattr(self.renderer, "do_" + function[0], function[1])
+                                    #def doc(self):
+                                    #    print function[1].__doc__
+                                    #setattr(self.renderer, "do_help_" + function[0], doc)
                         except:
                             print("Error when trying to load plugins from file " + path + "/" + f)
                             pass
@@ -103,5 +111,5 @@ class Session(object):
 
         For now only ipython can be used as renderer
         """
-        self.renderer.run()
+        self.renderer.cmdloop()
 

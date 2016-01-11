@@ -20,10 +20,11 @@ import shutil
 import ConfigParser
 import types
 import inspect
+from core.objects.config import Configuration
 
 
 class Session(object):
-    def __init__(self, input_disk, session_name, directory, plugins_directory):
+    def __init__(self, input_disk, session_name, directory, plugins_directory, system_hive, software_hive, sam_hive, users_hives):
         """Creates a new user session.
         
         Returns:
@@ -44,6 +45,9 @@ class Session(object):
         # Plugins directory
         self._plugins_directory = plugins_directory
 
+        # Configuration object for the analyzed disk
+        self.configuration = Configuration(self.input_disk, system_hive, software_hive, sam_hive, users_hives)
+
         # Set a renderer to handle graphical stuff
         self.renderer = renderer.ShellRenderer(self._name, self._directory)
 
@@ -63,16 +67,22 @@ class Session(object):
             os.makedirs(self._directory)
         except:
             pass
+        mounted_name = os.popen("lsblk | grep \"" + self._directory + "\"").read()
+        print mounted_name
+        uuid = os.popen("blkid | grep \"" + mounted_name + "\"").read().split("UUID=\"")[1].split("\" TYPE")[0]
+        print uuid
         shutil.copy("session_config.ini", self._directory)
         config_location = "".join([self._directory, "/session_config.ini"])
         config_file = open(config_location, "r+")
         parser = ConfigParser.SafeConfigParser()
         parser.read(config_location)
         parser.set("session_information", "session_name", self._name)
+        parser.set("disk_information", "UUID", uuid)
         parser.write(config_file)
         config_file.close()
         results_location = "".join([self._directory, "/session_results.ini"])
         results_file = open(results_location, "a")
+        results_file.close()
 
 
     def launch_plugins(self):

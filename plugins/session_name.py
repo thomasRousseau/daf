@@ -19,11 +19,11 @@ class SessionNameHandler():
         self.session.renderer.prompt = self.session.renderer.prompt.split(">")[0] + "> \033[1;34m" + name + ": \033[1;m"
         #Change the name in the config file
         config_location = "".join([self.session._directory, "/session_config.ini"])
-        config_file = open(config_location, "r+")
         parser = ConfigParser.SafeConfigParser()
-        parser.readfp(config_file)
+        parser.read(config_location)
         parser.remove_option("session_information", "session_name")
         parser.set("session_information", "session_name", name)
+        config_file = open(config_location, "w+")
         parser.write(config_file)
         config_file.close()
 

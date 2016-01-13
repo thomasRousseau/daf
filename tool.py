@@ -5,6 +5,7 @@ import sys
 import os
 import re
 from optparse import OptionParser
+import ConfigParser
 
 import session
 
@@ -37,6 +38,8 @@ def main(argv=None):
                     help="Specify the absolute path to the sam hive")
     parser.add_option("-u", "--users-hives", dest="users_hives", default=None,
                     help="Specify a list of (username, user_hive) couples")
+    parser.add_option("-c", "--continue", dest="cont",
+                    help="Specify a list of (username, user_hive) couples")
     (options, args) = parser.parse_args()
 
     if not options.input_disk:
@@ -57,6 +60,20 @@ def main(argv=None):
         for couples in options.users_hives.split("(")[1::]:
             couple = couples.split(")")[0].split(",")
             users_hives += [(couple[0], couple[1])]
+
+    if options.cont:
+        if not os.path.isdir(options.cont):
+            print("You specified a session folder that doesn't exist: " + options.cont)
+            sys.exit(-1)
+        if not options.cont[-1] == "/":
+            options.cont += "/"
+        if not os.path.isfile(options.cont + "session_config.ini") or not os.path.isfile(options.cont + "session_results.ini"):
+            print("The folder you specified to continue a session is missing one of the needed files (session_config.ini or session_results.ini)")
+            sys.exit(-1)
+        options.session_directory = options.cont
+        parser = ConfigParser.SafeConfigParser()
+        parser.read(options.cont + "session_config.ini")
+        options.session_name = parser.get("session_information", "session_name")
 
     # Create new user session
     user_session = session.Session(options.input_disk, options.session_name,

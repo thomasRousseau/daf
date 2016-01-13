@@ -40,7 +40,14 @@ class Session(object):
         self._name = session_name
 
         # Sesion directory in order to permit resumption of analysis
-        self._directory = os.path.abspath(directory) if directory else os.path.abspath("".join(["sessions/", self._name, "-", start_time]))
+        if directory:
+            if os.path.isdir(directory):
+                self._directory = os.path.abspath(directory) 
+            else:
+                print("The session directory \"" + directory + "\" you specified doesn't exist")
+                sys.exit(-1)
+        else:
+            self._directory = os.path.abspath("".join(["sessions/", self._name, "-", start_time]))
 
         # Plugins directory
         self._plugins_directory = plugins_directory
@@ -68,9 +75,7 @@ class Session(object):
         except:
             pass
         mounted_name = os.popen("lsblk | grep \"" + self._directory + "\"").read()
-        print mounted_name
-        uuid = os.popen("blkid | grep \"" + mounted_name + "\"").read().split("UUID=\"")[1].split("\" TYPE")[0]
-        print uuid
+        uuid = os.popen("sudo blkid | grep \"" + mounted_name + "\"").read().split("UUID=\"")[1].split("\" TYPE")[0]
         shutil.copy("session_config.ini", self._directory)
         config_location = "".join([self._directory, "/session_config.ini"])
         config_file = open(config_location, "r+")

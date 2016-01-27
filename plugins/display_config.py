@@ -1,9 +1,3 @@
-from datetime import datetime
-import ConfigParser
-from core.objects.config import Configuration
-import core.functions.common as common
-
-
 class ConfigurationHandler():
     def __init__(self, session):
         self.session = session
@@ -11,7 +5,7 @@ class ConfigurationHandler():
     def display_config(self, arg):
         """\tDisplay the configuration parameters of the disk to analyze."""
         output = "Configuration of the input disk:\n"
-        output += "--------------------------------\n"
+        output += "--------------------------------\n" 
         output += "Folder location: \t\t" + self.session.configuration.folder + "\n"
         output += "OS: \t\t\t\t" + self.session.configuration.os + "\n"
         output += "OS version: \t\t\t" + self.session.configuration.os_version + "\n"

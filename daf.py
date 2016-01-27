@@ -39,7 +39,8 @@ def main(argv=None):
     parser.add_option("-u", "--users-hives", dest="users_hives", default=None,
                     help="Specify a list of (username, user_hive) couples")
     parser.add_option("-c", "--continue", dest="cont",
-                    help="Specify a list of (username, user_hive) couples")
+                    help="Continue a previous session by giving its SESSION_FOLDER",
+                    metavar="SESSION_FOLDER")
     (options, args) = parser.parse_args()
 
     if not options.input_disk:

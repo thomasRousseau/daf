@@ -98,11 +98,11 @@ class Session(object):
         as ipython magic commands.
         """
         for path, subdirs, files in os.walk(self._plugins_directory):
-            try:
+            #try:
                 importlib.import_module(path.replace("/", "."))
                 for f in files:
                     if fnmatch(f, "*.py") and f != "__init__.py":
-                        try:
+            #            try:
                             plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
                             plugin = importlib.import_module(plugin_file)
                             for plugin_class in pyclbr.readmodule(plugin_file):
@@ -112,12 +112,12 @@ class Session(object):
                                     #def doc(self):
                                     #    print function[1].__doc__
                                     #setattr(self.renderer, "do_help_" + function[0], doc)
-                        except:
-                            print("Error when trying to load plugins from file " + path + "/" + f)
-                            pass
-            except: 
-                print("Error during plugins load")
-                pass
+            #            except:
+            #                print("Error when trying to load plugins from file " + path + "/" + f)
+            #                pass
+            #except: 
+            #    print("Error during plugins load")
+            #    pass
 
 
     def run_renderer(self):

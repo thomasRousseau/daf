@@ -109,9 +109,6 @@ class Session(object):
                                 pclass = getattr(plugin, plugin_class)(self)
                                 for function in [a for a in inspect.getmembers(pclass, predicate=inspect.ismethod) if a[0]!="__init__"]:
                                     setattr(self.renderer, "do_" + function[0], function[1])
-                                    #def doc(self):
-                                    #    print function[1].__doc__
-                                    #setattr(self.renderer, "do_help_" + function[0], doc)
             #            except:
             #                print("Error when trying to load plugins from file " + path + "/" + f)
             #                pass

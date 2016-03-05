@@ -220,5 +220,7 @@ def readString16FromPickle(content, content_size):
         return content.read(string_length*2).decode('utf-16', 'ignore')
     
 
-print ssns_parser("/mnt/441EDCA81EDC93F0/Data/Linux/Documents/Eurecom/Project/Samples/disk_mounted/disk4/Users/IEUser/AppData/Local/Google/Chrome/User Data/Default/Current Session")
+for i in ssns_parser("/media/daudau/ce551a8e-94b5-4b2c-889c-51f906c103a5/disk2/Users/IEUser/AppData/Local/Google/Chrome/User Data/Default/Current Session"):
+    print i
+    print "\n"
 

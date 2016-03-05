@@ -7,7 +7,7 @@ class UsbPartition():
         drive, guid, user, first_connection, first_connection_since_reboot,
         last_connection):
         self.serial_number = serial_number
-        self.firendly_name = name
+        self.friendly_name = name
         self.usb_type = usb_type
         self.vendor = vendor
         self.product = product
@@ -125,13 +125,14 @@ def find_usb_user(config, guid):
     """
     try:
         for user, user_hive in config.users_hives:
-            for key in registry.find_key_start_with(config.users_hives, 
+            for key in registry.find_key_start_with(user_hive, 
                 "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\" + 
                 "MountPoints2"):
                 if guid in key['Name']:
                     return user
+        return "User couldn't be found :("
     except:
-         return "User couldn't be found :("
+        return "User couldn't be found :("
 
 
 def find_first_connection(config, serial_number):

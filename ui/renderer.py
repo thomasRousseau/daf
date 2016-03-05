@@ -45,18 +45,17 @@ class ShellRenderer(cmd.Cmd):
             for i, line in enumerate(lines):
                 if i < start_command_line_number or i > end_command_line_number:
                     results_file.write(line)
-            results_file.close()
             if response:
+                results_file.close()
                 return cmd.Cmd.precmd(self, command)
             else:
-                results_file = open(self.session_directory + "/session_results.ini", "w")
                 for i, line in enumerate(lines):
                     if i >= start_command_line_number and i <= end_command_line_number:
                         results_file.write(line)
                         if i > start_command_line_number and i < end_command_line_number - 1:
                             print line[:-1]
                 results_file.close()
-                return cmd.Cmd.precmd(self, "")
+                return cmd.Cmd.precmd(self, "nothing")
                 
 
     def postcmd(self, stop, line):
@@ -87,9 +86,12 @@ class ShellRenderer(cmd.Cmd):
         """\tExit the program."""
         return True
 
+    def do_nothing(self, line):
+        pass
+
     def do_help(self, line):
         """\tDisplay this help."""
-        for function in [a for a in inspect.getmembers(self, predicate=inspect.ismethod) if a[0][0:3] == "do_"]:
+        for function in [a for a in inspect.getmembers(self, predicate=inspect.ismethod) if a[0][0:3] == "do_" and a[0] not in ["do_EOF", "do_nothing", "do_exit", "do_quit"]]:
             print function[0][3::]
             if function[1].__doc__ != None:
                 print function[1].__doc__

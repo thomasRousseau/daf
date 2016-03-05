@@ -355,24 +355,3 @@ def samparse(samhive):
 
 	return results
 
-def test():
-	parser = argparse.ArgumentParser()
-	parser.add_argument("SAM", help="SAM Windows registry hive to parse")
-	args = parser.parse_args()
-
-	results = samparse(args.SAM)
-        print results
-
-	for user in results['users']:
-		print "----- %s -----" % user
-		for key, value in results['users'][user].iteritems():
-			if value != '':
-				print str(key)  + " : " + str(value)
-		print "\n"
-
-	for group in results['groups']:
-		print "----- %s -----" % group
-		for key, value in results['groups'][group].iteritems():
-			if value != '':
-				print str(key)  + " : " + str(value)
-		print "\n"

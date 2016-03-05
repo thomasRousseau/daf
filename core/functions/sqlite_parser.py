@@ -17,3 +17,12 @@ def sqlite_parser(filepath):
             values_list.append(formatted_row)
         formatted_output[table_name] = values_list
     return formatted_output
+
+
+"""
+sqlitefile = "/media/daudau/ce551a8e-94b5-4b2c-889c-51f906c103a5/disk2/Users/IEUser/AppData/Local/Google/Chrome/User Data/Default/Cookies"
+for i in sqlite_parser(sqlitefile)['cookies']:
+    print i
+    print "\n"
+"""
+

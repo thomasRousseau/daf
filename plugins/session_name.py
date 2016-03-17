@@ -1,4 +1,8 @@
-import ConfigParser
+import sys
+if sys.version_info[0] == (3):
+    import configparser as ConfigParser
+else:
+    import ConfigParser
 
 
 class SessionNameHandler():

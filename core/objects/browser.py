@@ -30,7 +30,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Cookies"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_extensions(self, filepath=""):
         #TODO
@@ -43,7 +43,7 @@ class Chrome():
                     "Extension Cookies"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_favicons(self, filepath=""):
         try:
@@ -51,7 +51,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Favicons"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_history(self, filepath=""):
         try:
@@ -59,7 +59,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "History"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_history_provider_cache(self, filepath=""):
         #TODO
@@ -71,7 +71,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Login Data"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_network_action_predictor(self, filepath=""):
         try:
@@ -80,7 +80,7 @@ class Chrome():
                     "Network Action Predictor"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_network_persistent_state(self, filepath=""): 
         try:
@@ -92,7 +92,7 @@ class Chrome():
             f.close()
             return json.loads(raw_data)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_origin_bound_certs(self, filepath=""):
         try:
@@ -101,7 +101,7 @@ class Chrome():
                     "Origin Bound Certs"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_preferences(self, filepath=""):
         try:
@@ -112,7 +112,7 @@ class Chrome():
             f.close()
             return json.loads(raw_data)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_quotamanager(self, filepath=""):
         try:
@@ -120,7 +120,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "QuotaManager"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_secure_preferences(self, filepath=""): 
         try:
@@ -132,7 +132,7 @@ class Chrome():
             f.close()
             return json.loads(raw_data)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_shortcuts(self, filepath=""):
         try:
@@ -140,7 +140,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Shortcuts"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_tops_sites(self, filepath=""):
         try:
@@ -148,7 +148,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Top Sites"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_transportsecurity(self, filepath=""): 
         try:
@@ -160,7 +160,7 @@ class Chrome():
             f.close()
             return json.loads(raw_data)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
     def get_visited_links(self, filepath=""):
         #TODO
@@ -172,7 +172,7 @@ class Chrome():
                 filepath = self.config.folder + self.chrome_folder + "Web Data"
             return sqlite_parser.sqlite_parser(filepath)
         except:
-            print "The \"" + filepath + "\" file couldn't be found."
+            print("The \"" + filepath + "\" file couldn't be found.")
 
 
 class Chromium(Chrome):

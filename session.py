@@ -17,7 +17,10 @@ from fnmatch import fnmatch
 import pyclbr
 import sys
 import shutil
-import ConfigParser
+if sys.version_info[0] == (3):
+    import configparser as ConfigParser
+else:
+    import ConfigParser
 import types
 import inspect
 from core.objects.config import Configuration
@@ -99,19 +102,20 @@ class Session(object):
         """
         for path, subdirs, files in os.walk(self._plugins_directory):
             #try:
-                importlib.import_module(path.replace("/", "."))
-                for f in files:
-                    if fnmatch(f, "*.py") and f != "__init__.py":
-            #            try:
-                            plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
-                            plugin = importlib.import_module(plugin_file)
-                            for plugin_class in pyclbr.readmodule(plugin_file):
-                                pclass = getattr(plugin, plugin_class)(self)
-                                for function in [a for a in inspect.getmembers(pclass, predicate=inspect.ismethod) if a[0]!="__init__"]:
-                                    setattr(self.renderer, "do_" + function[0], function[1])
-            #            except:
-            #                print("Error when trying to load plugins from file " + path + "/" + f)
-            #                pass
+                if "__pycache__" not in path:
+                    importlib.import_module(path.replace("/", "."))
+                    for f in files:
+                        if fnmatch(f, "*.py") and f != "__init__.py":
+            #               try:
+                                plugin_file = os.path.join(path, f).split(".")[0].replace("/", ".")
+                                plugin = importlib.import_module(plugin_file)
+                                for plugin_class in pyclbr.readmodule(plugin_file):
+                                    pclass = getattr(plugin, plugin_class)(self)
+                                    for function in [a for a in inspect.getmembers(pclass, predicate=inspect.ismethod) if a[0]!="__init__"]:
+                                        setattr(self.renderer, "do_" + function[0], function[1])
+            #               except:
+            #                    print("Error when trying to load plugins from file " + path + "/" + f)
+            #                    pass
             #except: 
             #    print("Error during plugins load")
             #    pass

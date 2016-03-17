@@ -5,8 +5,10 @@ import sys
 import os
 import re
 from optparse import OptionParser
-import ConfigParser
-
+if sys.version_info[0] == (3):
+    import configparser as ConfigParser
+else:
+    import ConfigParser
 import session
 
 # Tool version

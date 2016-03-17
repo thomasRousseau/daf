@@ -30,7 +30,7 @@ class Usb():
 def find_usbstor_info(config):
     """ 
     Find all usb informations present in the 
-        SYSTEM\CurrentControlSet\Enum\USBSTOR registry key.
+        SYSTEM\\CurrentControlSet\\Enum\\USBSTOR registry key.
 
     Arguments: The Configuration object for the analyzed disk.
 
@@ -63,7 +63,7 @@ def find_usbstor_info(config):
 
 def find_usb_info(config):
     """
-    Find all usb informations present in the SYSTEM\CurrentControlSet\Enum\USB 
+    Find all usb informations present in the SYSTEM\\CurrentControlSet\\Enum\\USB 
         registry key.
 
     Arguments: The Configuration object for the analyzed disk.
@@ -114,8 +114,8 @@ def find_mounteddevices_info(config, serial_number):
 def find_usb_user(config, guid):
     """
     Find the user (if any) that used the specific usb device.
-    This information is contained in the NTUSER.DAT\SOFTWARE\Microsoft\Windows\
-        CurrentVersion\Explorer\MountPoints2 registry key.
+    This information is contained in the NTUSER.DAT\\SOFTWARE\\Microsoft\\Windows\
+        CurrentVersion\\Explorer\\MountPoints2 registry key.
 
     Arguments:  The Configuration object for the analyzed disk.
                 The guid of the device.
@@ -139,8 +139,8 @@ def find_first_connection(config, serial_number):
     """
     Find the time of the first connection of the device with the given serial
         number.
-    This information is stored in the C:\Windows\setupapi.log file for Windows
-        XP and in the C:\Windows\inf\setupapi.dev.log for the other versions.
+    This information is stored in the C:\\Windows\\setupapi.log file for Windows
+        XP and in the C:\\Windows\\inf\\setupapi.dev.log for the other versions.
 
     Arguments: The Configuration object of the analyzed disk.
                The serial number of the device.

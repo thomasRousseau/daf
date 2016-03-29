@@ -2,6 +2,7 @@ import sys
 import os.path
 import time
 import struct
+import codecs
 import core.functions.registry as registry
 
 DEFAULT_SYSTEM_HIVE = "Windows/System32/config/SYSTEM"
@@ -155,11 +156,12 @@ class Configuration():
             self.software_hive, "Microsoft\\Windows NT\\CurrentVersion",
             "RegisteredOwner")[0]['Value']
 
-
     def get_last_reboot(self):
         shutdown_time = registry.get_registry_key_specific_value(
             self.system_hive, self.current_control_set + "\\Control\\Windows",
             "ShutdownTime")[0]['Value']
+        if shutdown_time[0:2] == "b'":
+            shutdown_time = codecs.escape_decode(shutdown_time[2:-1])[0]
         return format(registry.filetime_to_date(shutdown_time),
             '%a, %d %B %Y %H:%M:%S %Z')
 

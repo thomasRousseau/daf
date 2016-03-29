@@ -114,7 +114,10 @@ def find_key_start_with(hive, key_start, depth=-1):
 
 # Windows store the last shutdown time in 64-bit filetime format (in hex string little endian).
 def filetime_to_date(little_endian):
-    hex = "".join("{:02x}".format(ord(c)) for c in little_endian[::-1])
+    if type(little_endian[::-1][0]) is int:
+        hex = "".join("{:02x}".format(c) for c in little_endian[::-1])
+    else:
+        hex = "".join("{:02x}".format(ord(c)) for c in little_endian[::-1])
     microseconds = int(hex, 16) / 10
     seconds, microseconds = divmod(microseconds, 1000000)
     days, seconds = divmod(seconds, 86400)

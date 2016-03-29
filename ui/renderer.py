@@ -25,7 +25,10 @@ class ShellRenderer(cmd.Cmd):
         found_command = False
         for i, line in enumerate(results_file):
             if line == ">>> " + command + " <<<\n":
-                response = raw_input("This command has already been played. Do you want to replay it (y) or see the last response (n)? [Y/n]:")
+                try:
+                    response = raw_input("This command has already been played. Do you want to replay it (y) or see the last response (n)? [Y/n]:")
+                except NameError as e:
+                    response = input("This command has already been played. Do you want to replay it (y) or see the last response (n)? [Y/n]:")
                 if response in ["n", "N", "no", "NO", "No"]:
                     response = False
                     start_command_line_number = i

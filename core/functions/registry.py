@@ -1,7 +1,7 @@
 import datetime
 import struct, datetime, argparse
 from collections import OrderedDict
-from Registry import Registry #python-registry
+from Registry import Registry 
 
 
 def get_registry_key_specific_value(hive, key_path, key_value):

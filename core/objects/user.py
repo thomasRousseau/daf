@@ -50,13 +50,18 @@ def get_groups_list(config):
     groups_list = []
     sam_info = registry.samparse(config.sam_hive)
     for group in sam_info['groups']:
+        bgroup = group
+        if type(group) is not str:
+            group = group.decode("utf-8")
         name = ''.join(group[::2])
-        group_description  = ''.join(sam_info['groups'][group]
-            ['Group Description'][::2])
-        last_write = sam_info['groups'][group]['Last Write']
-        user_count = sam_info['groups'][group]['User Count']
+        group_description = sam_info['groups'][bgroup]['Group Description']
+        if type(group_description) is not str:
+            group_description = group_description.decode("utf-8")
+        group_description  = ''.join(group_description[::2])
+        last_write = sam_info['groups'][bgroup]['Last Write']
+        user_count = sam_info['groups'][bgroup]['User Count']
         members = []
-        for member in sam_info['groups'][group]['Members'].split("\n"):
+        for member in sam_info['groups'][bgroup]['Members'].split("\n"):
             if member:
                 members.append([registry.sid_to_username(member, config.folder),
                     member])

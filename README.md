@@ -6,7 +6,7 @@
 ###Installation:
 ```
 apt-get install python-pip
-pip install python-registry
+pip install -r requirements.txt
 ```
 
 ###Objective:

@@ -50,13 +50,18 @@ def get_groups_list(config):
     groups_list = []
     sam_info = registry.samparse(config.sam_hive)
     for group in sam_info['groups']:
+        bgroup = group
+        if type(group) is not str:
+            group = group.decode("utf-8")
         name = ''.join(group[::2])
-        group_description  = ''.join(sam_info['groups'][group]
-            ['Group Description'][::2])
-        last_write = sam_info['groups'][group]['Last Write']
-        user_count = sam_info['groups'][group]['User Count']
+        group_description = sam_info['groups'][bgroup]['Group Description']
+        if type(group_description) is not str:
+            group_description = group_description.decode("utf-8")
+        group_description  = ''.join(group_description[::2])
+        last_write = sam_info['groups'][bgroup]['Last Write']
+        user_count = sam_info['groups'][bgroup]['User Count']
         members = []
-        for member in sam_info['groups'][group]['Members'].split("\n"):
+        for member in sam_info['groups'][bgroup]['Members'].split("\n"):
             if member:
                 members.append([registry.sid_to_username(member, config.folder),
                     member])
@@ -69,22 +74,36 @@ def get_users_list(config):
     users_list = []
     sam_info = registry.samparse(config.sam_hive)
     for user in sam_info['users']:
-        username = user
+        if user[:2] == "b'":
+            username = user[2:-1][::5]
+        else:
+            username = user
         [sid, user_folder] = get_sid_and_folder_from_username(config,
             username)
         account_type = sam_info['users'][user]['Account Type']
         rid = sam_info['users'][user]['RID']
-        account_created_date = sam_info['users'][user]['Account Created Date']
+        try:
+            account_created_date = sam_info['users'][user]['Account Created Date']
+        except KeyError as e:
+            account_created_date = "Not available"
+            pass
         last_login_date = sam_info['users'][user]['Last Login Date']
         password_reset_date = sam_info['users'][user]['Password Reset Date']
         password_fail_date = sam_info['users'][user]['Password Fail Date']
         account_flags = sam_info['users'][user]['Account Flags']
         failed_login_count = sam_info['users'][user]['Failed Login Count']
         login_count = sam_info['users'][user]['Login Count']
-        lm_hash = ''.join('{:02x}'.format(ord(c)) for c in sam_info['users']
-            [user]['LM Password Hash'])
-        nt_hash = ''.join('{:02x}'.format(ord(c)) for c in sam_info['users']
-            [user]['NT Password Hash'])
+        lm = sam_info['users'][user]['LM Password Hash']
+        lm_password_hash = sam_info['users'][user]['LM Password Hash']
+        if type(lm_password_hash) is not str:
+            lm_hash = ''.join('{:02x}'.format(c) for c in lm_password_hash)
+        else:
+            lm_hash = ''.join('{:02x}'.format(ord(c)) for c in lm_password_hash)
+        nt_password_hash = sam_info['users'][user]['NT Password Hash']
+        if type(nt_password_hash) is not str:
+            nt_hash = ''.join('{:02x}'.format(c) for c in nt_password_hash)
+        else:
+            nt_hash = ''.join('{:02x}'.format(ord(c)) for c in nt_password_hash)
         users_list.append(User(username, sid, user_folder, account_type, rid,
             account_created_date, last_login_date, password_reset_date,
             password_fail_date, account_flags, failed_login_count, login_count,

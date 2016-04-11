@@ -146,3 +146,47 @@ The functions should also return a string which is what will be printed to the u
 
 The first multi-line comment, just after the function declaration, is what will be printed for the command when calling the help. 
 
+
+###How to mount a vmdk disk on Linux
+
+You are going to need the `affuse` tool as well as the `mmls` command :
+
+```
+apt-get update && apt-get install afflib-tools sleuthkit
+```
+
+Locate your vmdk file
+
+```
+mkdir raw mount
+affuse -o allow_other disk.vmdk raw
+mmls raw/disk.vmdk.raw
+```
+
+This should get you an output similar to this :
+
+```
+DOS Partition Table
+Offset Sector: 0
+Units are in 512-byte sectors
+
+     Slot    Start        End          Length       Description
+00:  Meta    0000000000   0000000000   0000000001   Primary Table (#0)
+01:  -----   0000000000   0000002047   0000002048   Unallocated
+02:  00:00   0000002048   0000206847   0000204800   NTFS (0x07)
+03:  00:01   0000206848   0266332159   0266125312   NTFS (0x07)
+04:  -----   0266332160   0266338303   0000006144   Unallocated
+```
+
+We can now figure the mount offset : 
+**Offset = (Address of the begining of your disk partition) x (Unit size)**
+
+
+Here : 
+**Offset = 206848*512 = 105906176**
+
+```
+mount -o ro,loop,offset=105906176 raw/disk.vmdk.raw mount
+```
+
+Your disk is now mounted on the mount folder

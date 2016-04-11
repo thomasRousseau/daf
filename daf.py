@@ -46,7 +46,7 @@ def main(argv=None):
     (options, args) = parser.parse_args()
 
     if not options.input_disk:
-        print("You need to specify the path to the disk you want to analyze")
+        print("You need to specify the path to the disk you want to analyze (-i disk_path)")
         sys.exit(-1)
     else:
         options.input_disk = os.path.abspath(options.input_disk)
